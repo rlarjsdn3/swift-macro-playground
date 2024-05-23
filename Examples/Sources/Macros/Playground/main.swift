@@ -14,6 +14,12 @@ runEnvironmentValueAccessorMacroPlayground()
 
 
 
+// MARK: - Complex Macros
+
+runDictionaryStorageMacroPlayground()
+
+
+
 // MARK: - Extension Macros
 
 runEquatableExtensionMacroPlayground()
