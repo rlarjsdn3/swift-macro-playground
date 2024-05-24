@@ -15,6 +15,7 @@ struct MyPlugin: CompilerPlugin {
         EnvironmentValueMacro.self,
         DictionaryStorageMacro.self,
         DictionaryStoragePropertyMacro.self,
+        URLMacro.self,
         EquatableExtensionMacro.self,
         CaseDetectionMacro.self,
         EnumSubsetMacro.self,

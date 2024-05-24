@@ -2,10 +2,10 @@ import SwiftSyntax
 import SwiftSyntaxBuilder
 import SwiftSyntaxMacros
 import SwiftSyntaxMacrosTestSupport
-import XCTest
 import MacrosImplementation
+import XCTest
 
-let testMacros: [String: Macro.Type] = [
+fileprivate let testMacros: [String: Macro.Type] = [
     "EnumSubset": EnumSubsetMacro.self,
 ]
 
