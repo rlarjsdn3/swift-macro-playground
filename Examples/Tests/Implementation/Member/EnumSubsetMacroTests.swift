@@ -38,10 +38,10 @@ final class EnumSubsetMacroTests: XCTestCase {
             
                 var value: Slope {
                     switch self {
-                        case .beginnerParadise:
-                            return .beginnerParadise
-                        case .practiceRun:
-                            return .practiceRun
+                    case .beginnerParadise:
+                        return .beginnerParadise
+                    case .practiceRun:
+                        return .practiceRun
                     }
                 }
             }

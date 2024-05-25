@@ -13,6 +13,8 @@ import SwiftSyntaxMacros
 struct MyPlugin: CompilerPlugin {
     let providingMacros: [any Macro.Type] = [
         EnvironmentValueMacro.self,
+        CodableMacro.self,
+        CodableKeyMacro.self,
         DictionaryStorageMacro.self,
         DictionaryStoragePropertyMacro.self,
         URLMacro.self,

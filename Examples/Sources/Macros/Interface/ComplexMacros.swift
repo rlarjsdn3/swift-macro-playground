@@ -19,3 +19,20 @@ public macro DictionaryStorageProperty() = #externalMacro(
     module: "MacrosImplementation",
     type: "DictionaryStoragePropertyMacro"
 )
+
+
+
+// MARK: - Codable
+
+@attached(member, names: named(CodingKeys))
+@attached(extension, conformances: Codable)
+public macro Codable() = #externalMacro(
+    module: "MacrosImplementation",
+    type: "CodableMacro"
+)
+
+@attached(peer)
+public macro CodableKey(name: String) = #externalMacro(
+    module: "MacrosImplementation",
+    type: "CodableKeyMacro"
+)
