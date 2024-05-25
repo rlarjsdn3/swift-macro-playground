@@ -55,8 +55,8 @@ public struct EnumSubsetMacro: MemberMacro {
                 for element in elements {
                     SwitchCaseSyntax(
                         """
-                            case .\(element.name): 
-                                return .\(element.name)
+                        case .\(element.name):
+                            return .\(element.name)
                         """
                     )
                 }

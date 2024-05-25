@@ -18,7 +18,7 @@ public struct EquatableExtensionMacro: ExtensionMacro {
         conformingTo protocols: [TypeSyntax],
         in context: some MacroExpansionContext
     ) throws -> [ExtensionDeclSyntax] {
-        let equtableExtension = try ExtensionDeclSyntax("extension \(type.trimmed): Equatable {}")
+        let equtableExtension = try ExtensionDeclSyntax("extension \(type.trimmed): Equatable { }")
         
         return [equtableExtension]
     }

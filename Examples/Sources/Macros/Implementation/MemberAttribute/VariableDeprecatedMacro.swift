@@ -18,7 +18,7 @@ public struct VariableDeprecatedMacro: MemberAttributeMacro {
         in context: some MacroExpansionContext
     ) throws -> [AttributeSyntax] {
         guard
-            let member = member.as(VariableDeclSyntax.self)
+            let _ = member.as(VariableDeclSyntax.self)
         else { return [] }
 
         return ["@available(*, deprecated)"]

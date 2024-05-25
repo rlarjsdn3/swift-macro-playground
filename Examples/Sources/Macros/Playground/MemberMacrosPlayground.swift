@@ -14,8 +14,7 @@ func runMemberMacrosPlayground() {
     
     @CaseDetection
     enum Pet {
-        case dog
-        case cat(curious: Bool)
+        case dog, cat(curious: Bool)
         case parrot
         case snake
     }
@@ -23,7 +22,6 @@ func runMemberMacrosPlayground() {
     let pet: Pet = .cat(curious: true)
     print("Pet is dog: \(pet.isDog)")
     print("Pet is cat: \(pet.isCat)")
-    
     
     
     // MARK: - Codable

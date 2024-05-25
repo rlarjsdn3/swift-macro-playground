@@ -8,6 +8,7 @@
 import SwiftSyntax
 import SwiftSyntaxMacros
 import SwiftSyntaxBuilder
+import SwiftDiagnostics
 
 public struct CaseDetectionMacro: MemberMacro {
     
@@ -16,9 +17,16 @@ public struct CaseDetectionMacro: MemberMacro {
         providingMembersOf declaration: some DeclGroupSyntax,
         in context: some MacroExpansionContext
     ) throws -> [DeclSyntax] {
-        declaration.memberBlock.members
+        guard
+            let enumDecl = declaration.as(EnumDeclSyntax.self)
+        else {
+            throw CustomError.message("해당 매크로는 Enum에만 적용할 수 있습니다.")
+        }
+        
+        return enumDecl.memberBlock.members
             .compactMap { $0.decl.as(EnumCaseDeclSyntax.self) }
-            .map { $0.elements.first!.name }
+            .flatMap { $0.elements }
+            .map { $0.name }
             .map { ($0, $0.initialUppercased) }
             .map { original, uppercased in
                 """

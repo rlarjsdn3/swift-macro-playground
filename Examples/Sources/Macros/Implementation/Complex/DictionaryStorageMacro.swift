@@ -43,6 +43,7 @@ extension DictionaryStorageMacro: MemberAttributeMacro {
         return [
             AttributeSyntax(
                 leadingTrivia: [.newlines(1), .spaces(4)],
+                atSign: .atSignToken(),
                 attributeName: IdentifierTypeSyntax(
                     name: TokenSyntax.identifier("DictionaryStorageProperty")
                 )
@@ -79,7 +80,9 @@ public struct DictionaryStoragePropertyMacro: AccessorMacro {
             return []
         }
         
-        guard let defaultValue = binding.initializer?.value else {
+        guard 
+            let defaultValue = binding.initializer?.value
+        else {
             throw CustomError.message("stored property must have an initalizer")
         }
         
