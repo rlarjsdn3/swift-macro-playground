@@ -12,10 +12,6 @@ let package = Package(
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "DIContainer",
-            targets: ["DIContainer"]
-        ),
-        .library(
             name: "Macros",
             targets: ["MacrosInterface"]
         ),
@@ -25,15 +21,10 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(url: "https://github.com/apple/swift-syntax.git", from: "509.0.0")
+        .package(url: "https://github.com/apple/swift-syntax.git", from: "509.0.0"),
+        .package(url: "https://github.com/pointfreeco/swift-dependencies.git", from: "1.3.0")
     ],
     targets: [
-        .target(
-            name: "DIContainer",
-            dependencies: [],
-            path: "Sources/Helpers/DIContainer"
-        ),
-        
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         // Macro implementation that performs the source transformation of a macro.
@@ -51,7 +42,10 @@ let package = Package(
         // Library that exposes a macro as part of its API, which is used in client programs.
         .target(
             name: "MacrosInterface",
-            dependencies: ["MacrosImplementation"],
+            dependencies: [
+                "MacrosImplementation",
+                .product(name: "Dependencies", package: "swift-dependencies")
+            ],
             path: "Sources/Macros/Interface"
         ),
 
@@ -59,8 +53,7 @@ let package = Package(
         .executableTarget(
             name: "MacrosPlayground",
             dependencies: [
-                "DIContainer",
-                "MacrosInterface"
+                "MacrosInterface",
             ],
             path: "Sources/Macros/Playground"
         ),

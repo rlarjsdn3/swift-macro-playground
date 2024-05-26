@@ -12,16 +12,19 @@ import SwiftSyntaxMacros
 @main
 struct MyPlugin: CompilerPlugin {
     let providingMacros: [any Macro.Type] = [
+        DependencyValueMacro.self,
         EnvironmentValueMacro.self,
         CodableMacro.self,
         CodableKeyMacro.self,
         DictionaryStorageMacro.self,
         DictionaryStoragePropertyMacro.self,
+        StringifyMacro.self,
         URLMacro.self,
         EquatableExtensionMacro.self,
         CaseDetectionMacro.self,
         EnumSubsetMacro.self,
-        VariableDeprecatedMacro.self
+        VariableDeprecatedMacro.self,
+        WrapStoredPropertiesMacro.self
     ]
 }
 #endif

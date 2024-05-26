@@ -109,8 +109,8 @@ public struct DictionaryStoragePropertyMacro: AccessorMacro {
 
 extension VariableDeclSyntax {
     
-    var isStoredProperty: Bool {
-        // variable should be declared only one per line
+    fileprivate var isStoredProperty: Bool {
+        // Variable should be declared only one per line
         if bindings.count != 1 {
             return false
         }
@@ -133,11 +133,11 @@ extension VariableDeclSyntax {
                 }
             }
             
+            return true
+            
         case .getter:
             return false
         }
-        
-        return true
     }
     
 }

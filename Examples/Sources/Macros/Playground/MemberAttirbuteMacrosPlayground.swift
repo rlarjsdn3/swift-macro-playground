@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 import MacrosInterface
 
 func runMemberAttributeMacrosPlayground() {
@@ -32,5 +33,12 @@ func runMemberAttributeMacrosPlayground() {
     
     
     // MARK: - Wrap Stored Properties
+    
+    @wrapStoredProperties("Published")
+    class ViewModel: ObservableObject {
+        var x: Int = 10
+    }
+    
+    _ = ViewModel().x
     
 }

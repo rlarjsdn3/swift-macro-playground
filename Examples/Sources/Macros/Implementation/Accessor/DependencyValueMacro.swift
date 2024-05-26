@@ -1,15 +1,15 @@
 //
-//  EnvironmentValueMacro.swift
+//  File.swift
+//  
 //
-//
-//  Created by 김건우 on 5/22/24.
+//  Created by 김건우 on 5/26/24.
 //
 
 import SwiftSyntax
-import SwiftSyntaxMacros
 import SwiftSyntaxBuilder
+import SwiftSyntaxMacros
 
-public struct EnvironmentValueMacro: AccessorMacro {
+public struct DependencyValueMacro: AccessorMacro {
     
     public static func expansion(
         of node: AttributeSyntax,
@@ -18,17 +18,17 @@ public struct EnvironmentValueMacro: AccessorMacro {
     ) throws -> [AccessorDeclSyntax] {
         guard
             case let .argumentList(arguments) = node.arguments,
-            let argument = arguments.first
-        else { 
+            let expression = arguments.first?.expression
+        else {
             return []
         }
         
         return [
             """
-            get { self[\(argument.expression)] }
+            get { self[\(expression)] }
             """,
             """
-            set { self[\(argument.expression)] = newValue }
+            set { self[\(expression)] = newValue }
             """
         ]
     }

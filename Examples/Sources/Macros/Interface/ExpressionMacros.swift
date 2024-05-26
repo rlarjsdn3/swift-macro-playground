@@ -8,6 +8,15 @@
 import Foundation
 
 
+// MARK: - Stringify Expression
+
+@freestanding(expression)
+public macro stringify<T>(_ value: T) -> (T, String) = #externalMacro(
+    module: "MacrosImplementation",
+    type: "StringifyMacro"
+)
+
+
 // MARK: - URL Expression
 
 @freestanding(expression)
@@ -15,3 +24,5 @@ public macro URL(_ s: String) -> URL = #externalMacro(
     module: "MacrosImplementation",
     type: "URLMacro"
 )
+
+
