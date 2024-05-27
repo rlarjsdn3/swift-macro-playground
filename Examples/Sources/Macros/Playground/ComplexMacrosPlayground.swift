@@ -41,7 +41,9 @@ func runDictionaryStorageMacroPlayground() {
     let jsonString = "{\"name\":\"김소월\", \"day_of_birth\":\"1998-03-21\", \"age\":27,}"
     if let jsonData = jsonString.data(using: .utf8),
        let decodedMember = try? JSONDecoder().decode(Member.self, from: jsonData) {
-        print(decodedMember)
+        print("Decoded Member: \(decodedMember)")
+    } else {
+      print("Json Decoding Fail..")
     }
 }
 

@@ -98,7 +98,6 @@ public struct DictionaryStoragePropertyMacro: AccessorMacro {
             }
             """
         ]
-            
     }
     
 }

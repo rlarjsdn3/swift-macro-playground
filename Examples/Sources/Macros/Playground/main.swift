@@ -20,6 +20,12 @@ runDictionaryStorageMacroPlayground()
 
 
 
+// MARK: - Declaration Macros
+
+runDeclarationMacroPlayground()
+
+
+
 // MARK: - Expression Macro
 
 runExpressionMacrosPlayground()

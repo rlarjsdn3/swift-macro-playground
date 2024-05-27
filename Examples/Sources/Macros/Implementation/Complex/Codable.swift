@@ -46,8 +46,8 @@ extension CodableMacro: MemberMacro {
             if let codableKey = member.decl
                 .as(VariableDeclSyntax.self)?
                 .attributes
-                .first(where: { element in
-                    element
+                .first(where: { attribute in
+                    attribute
                         .as(AttributeSyntax.self)?
                         .attributeName
                         .as(IdentifierTypeSyntax.self)?

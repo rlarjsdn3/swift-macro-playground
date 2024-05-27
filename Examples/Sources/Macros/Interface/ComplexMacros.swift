@@ -5,6 +5,23 @@
 //  Created by 김건우 on 5/23/24.
 //
 
+// MARK: - Codable Complex
+
+@attached(member, names: named(CodingKeys))
+@attached(extension, conformances: Codable)
+public macro Codable() = #externalMacro(
+    module: "MacrosImplementation",
+    type: "CodableMacro"
+)
+
+@attached(peer)
+public macro CodableKey(name: String) = #externalMacro(
+    module: "MacrosImplementation",
+    type: "CodableKeyMacro"
+)
+
+
+
 // MARK: - Dictionary Storage Complex
 
 @attached(memberAttribute)
@@ -18,21 +35,4 @@ public macro DictionaryStorage() = #externalMacro(
 public macro DictionaryStorageProperty() = #externalMacro(
     module: "MacrosImplementation",
     type: "DictionaryStoragePropertyMacro"
-)
-
-
-
-// MARK: - Codable
-
-@attached(member, names: named(CodingKeys))
-@attached(extension, conformances: Codable)
-public macro Codable() = #externalMacro(
-    module: "MacrosImplementation",
-    type: "CodableMacro"
-)
-
-@attached(peer)
-public macro CodableKey(name: String) = #externalMacro(
-    module: "MacrosImplementation",
-    type: "CodableKeyMacro"
 )

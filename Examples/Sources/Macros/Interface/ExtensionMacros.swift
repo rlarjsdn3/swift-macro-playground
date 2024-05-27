@@ -12,3 +12,12 @@ public macro equatable() = #externalMacro(
     module: "MacrosImplementation",
     type: "EquatableExtensionMacro"
 )
+
+
+// MARK: - Default Fatal Error Implementation
+
+@attached(extension, names: arbitrary)
+public macro defaultFatalErrorImplementation() = #externalMacro(
+    module: "MacrosImplementation",
+    type: "DefaultFatalErrorImplementationMacro"
+)
