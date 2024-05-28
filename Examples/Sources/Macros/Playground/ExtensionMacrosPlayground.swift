@@ -26,7 +26,7 @@ struct Pet {
 
 func runEquatableExtensionMacroPlayground() {
     let myAPI = MyAPI()
-    myAPI.getItems()
+//    myAPI.getItems()
     print("Implementation of `API` protocol with default implementation: \(myAPI)")
     
     

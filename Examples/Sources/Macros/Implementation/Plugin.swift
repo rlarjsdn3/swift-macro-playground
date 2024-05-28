@@ -18,6 +18,7 @@ struct MyPlugin: CompilerPlugin {
         CodableKeyMacro.self,
         DictionaryStorageMacro.self,
         DictionaryStoragePropertyMacro.self,
+        RawValueMacro.self,
         FuncUniqueMacro.self,
         StringifyMacro.self,
         URLMacro.self,

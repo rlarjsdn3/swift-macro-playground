@@ -36,3 +36,17 @@ public macro DictionaryStorageProperty() = #externalMacro(
     module: "MacrosImplementation",
     type: "DictionaryStoragePropertyMacro"
 )
+
+
+
+// MARK: - Raw Value Complex
+
+@attached(member, names: named(init), named(rawValue))
+@attached(extension, conformances: RawRepresentable)
+public macro RawValue<T>(_ type: T.Type) = #externalMacro(
+    module: "MacrosImplementation",
+    type: "RawValueMacro"
+)
+
+
+

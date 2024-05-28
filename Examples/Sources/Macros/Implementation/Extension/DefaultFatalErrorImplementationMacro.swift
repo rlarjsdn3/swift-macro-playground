@@ -53,11 +53,10 @@ public struct DefaultFatalErrorImplementationMacro: ExtensionMacro {
         }
         
         let extensionDecl = ExtensionDeclSyntax(extendedType: type) {
+            // @resultBuilder로 구현되어 있기에 for-in 구문 가능
             for method in methods {
                 MemberBlockItemSyntax(decl: method)
             }
-            
-            MemberBlockItemList
         }
         
         return [extensionDecl]

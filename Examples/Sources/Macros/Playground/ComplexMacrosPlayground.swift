@@ -28,6 +28,12 @@ public struct Member {
 }
 
 
+// MARK: - RawValue
+
+@RawValue(Int.self)
+struct Key { }
+
+
 
 
 func runDictionaryStorageMacroPlayground() {
@@ -45,6 +51,10 @@ func runDictionaryStorageMacroPlayground() {
     } else {
       print("Json Decoding Fail..")
     }
+    
+    
+    let key = Key(rawValue: 10 )
+    print("Key-rawValue: \(String(describing: key?.rawValue))")
 }
 
 
