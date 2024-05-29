@@ -32,23 +32,18 @@ extension RawValueMacro: MemberMacro {
                 .base
         else { return [] }
         
-        let scope = {
+        let scope: DeclModifierSyntax = {
             declaration.modifiers
-                .compactMap { modifier -> DeclModifierSyntax? in
-                    switch modifier.name.tokenKind {
-                    case .keyword(.public):
-                        return DeclModifierSyntax(name: .identifier("public"))
-                    default:
-                        return nil
-                    }
-                }
-                .first?
-                .name ?? ""
+                .first(where: { modifier in
+                    modifier.name.tokenKind == .keyword(.public)
+                })
+            ?? DeclModifierSyntax(name: .identifier(""))
         }()
+        
         
         let varDecl = VariableDeclSyntax(
             modifiers: DeclModifierListSyntax(
-                arrayLiteral: DeclModifierSyntax(name: scope)
+                arrayLiteral: scope
             ),
             bindingSpecifier: .keyword(.var),
             bindings: PatternBindingListSyntax(
@@ -67,7 +62,7 @@ extension RawValueMacro: MemberMacro {
         
         let initDecl = InitializerDeclSyntax(
             modifiers: DeclModifierListSyntax(
-                arrayLiteral: DeclModifierSyntax(name: scope)
+                arrayLiteral: scope
             ),
             initKeyword: .identifier("init?"),
             signature: FunctionSignatureSyntax(
@@ -113,6 +108,24 @@ extension RawValueMacro: MemberMacro {
             DeclSyntax(varDecl),
             DeclSyntax(initDecl)
         ]
+        
+        
+        
+        
+        // - Easier Code
+        
+        /*
+        return [
+            """
+            \(scope) var rawValue: \(type.trimmed)
+            """,
+            """
+            \(scope) init?(rawValue: \(type.trimmed)) {
+                self.rawValue = rawValue
+            }
+            """
+        ]
+        */
     }
     
 }

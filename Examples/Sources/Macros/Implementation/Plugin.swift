@@ -21,6 +21,7 @@ struct MyPlugin: CompilerPlugin {
         RawValueMacro.self,
         FuncUniqueMacro.self,
         StringifyMacro.self,
+        UnwrapMacro.self,
         URLMacro.self,
         DefaultFatalErrorImplementationMacro.self,
         EquatableExtensionMacro.self,

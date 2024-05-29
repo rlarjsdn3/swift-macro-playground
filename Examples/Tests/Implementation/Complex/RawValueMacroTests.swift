@@ -21,7 +21,9 @@ final class RawValueMacroTests: XCTestCase {
         assertMacroExpansion(
             """
             @RawValue(Int.self)
-            public struct Test { }
+            public struct Test {
+
+            }
             """,
             expandedSource:
             """
@@ -31,7 +33,9 @@ final class RawValueMacroTests: XCTestCase {
             
                 public init?(rawValue: Int) {
                     self.rawValue = rawValue
-                }}
+                }
+            
+            }
             
             extension Test: RawRepresentable {
             }

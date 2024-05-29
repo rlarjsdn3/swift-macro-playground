@@ -7,13 +7,21 @@
 
 import Foundation
 
-
 // MARK: - Stringify Expression
 
 @freestanding(expression)
 public macro stringify<T>(_ value: T) -> (T, String) = #externalMacro(
     module: "MacrosImplementation",
     type: "StringifyMacro"
+)
+
+
+// MARK: - Unwrap Expression
+
+@freestanding(expression)
+public macro unwrap<T>(_ value: T?, message: String) -> T = #externalMacro(
+    module: "MacrosImplementation",
+    type: "UnwrapMacro"
 )
 
 

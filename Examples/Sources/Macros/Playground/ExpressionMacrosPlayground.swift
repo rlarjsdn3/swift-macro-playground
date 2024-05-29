@@ -12,6 +12,12 @@ func runExpressionMacrosPlayground() {
     // MARK: - Stringify Expression
     
     let a = #stringify(2 + 3)
-    print(a)
+    print("Stringify: ", a)
     
+    
+    // MARK: - Unwrap Expression
+    
+    let optionalValue: Int? = 32
+    let value = #unwrap(optionalValue, message: "옵셔널 해제 실패")
+    print("Unwrap Optional Value: ", value)
 }
