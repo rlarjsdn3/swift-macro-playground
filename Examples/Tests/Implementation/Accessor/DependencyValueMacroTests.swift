@@ -16,7 +16,7 @@ fileprivate let testMacros: [String: Macro.Type] = [
 
 final class DependencyValueMacroTests: XCTestCase {
     
-    func testDeendencyValue() throws {
+    func testDendencyValue() throws {
         
         assertMacroExpansion(
             """

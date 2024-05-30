@@ -54,6 +54,7 @@ let package = Package(
             name: "MacrosPlayground",
             dependencies: [
                 "MacrosInterface",
+                .product(name: "SwiftParser", package: "swift-syntax")
             ],
             path: "Sources/Macros/Playground"
         ),
