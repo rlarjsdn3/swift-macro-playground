@@ -52,4 +52,7 @@ runMemberMacrosPlayground()
 
 
 
+// MARK: - Peer Macros
+
+runPeerMacrosPlayground()
 
