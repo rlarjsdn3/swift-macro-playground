@@ -24,5 +24,13 @@ func runMemberMacrosPlayground() {
     print("Pet is cat: \(pet.isCat)")
     
     
-    // MARK: - Codable
+    // MARK: - Meta Enum
+    
+    @MetaEnum
+    enum Value {
+        case integer(Int)
+        case text(String)
+        case boolean(Bool)
+        case null
+    }
 }

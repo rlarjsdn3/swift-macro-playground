@@ -139,10 +139,11 @@ extension RawValueMacro: ExtensionMacro {
         conformingTo protocols: [TypeSyntax],
         in context: some MacroExpansionContext
     ) throws -> [ExtensionDeclSyntax] {
+        
+        
         let rawRepresentableExtension = try ExtensionDeclSyntax("extension \(type.trimmed): RawRepresentable { }")
         
         return [rawRepresentableExtension]
     }
     
 }
-

@@ -42,6 +42,7 @@ func runDictionaryStorageMacroPlayground() {
     print("Default value for point.x: \(point.x)")
     point.y = 17
     print("Point storage contains only the value we set: \(point)")
+    print("Point storage _storage Value: \(point._storage)")
     
     
     let jsonString = "{\"name\":\"김소월\", \"day_of_birth\":\"1998-03-21\", \"age\":27,}"

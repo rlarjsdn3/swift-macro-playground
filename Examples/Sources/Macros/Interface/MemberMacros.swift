@@ -21,3 +21,13 @@ public macro EnumSubset<Superset>() = #externalMacro(
     module: "MacrosImplementation",
     type: "EnumSubsetMacro"
 )
+
+
+
+// MARK: - Meta Enum Member
+
+@attached(member, names: named(Meta))
+public macro MetaEnum() = #externalMacro(
+    module: "MacrosImplementation",
+    type: "MetaEnumMacro"
+)

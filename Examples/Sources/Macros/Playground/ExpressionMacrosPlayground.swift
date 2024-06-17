@@ -10,6 +10,14 @@ import MacrosInterface
 
 func runExpressionMacrosPlayground() {
     
+    // MARK: - Source Location Expression
+    
+    print("FileID: \(#FileID as String)")
+    print("FilePath: \(#FilePath as String)")
+    print("Line: \(#Line as Int)")
+    print("Column: \(#Column as Int)")
+    
+    
     // MARK: - Stringify Expression
     
     let a = #stringify(2 + 3)
@@ -27,5 +35,10 @@ func runExpressionMacrosPlayground() {
     
     let url: URL = #URL("https://www.apple.com/kr")
     print("Froce Wrapped Url: \(url)")
+    
+    
+    // MARK: - Warning Expression
+    
+    #myWarning("remember to pass a string literal here")
     
 }
