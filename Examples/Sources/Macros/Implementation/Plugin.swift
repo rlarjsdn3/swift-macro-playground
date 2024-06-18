@@ -36,6 +36,7 @@ struct MyPlugin: CompilerPlugin {
         VariableDeprecatedMacro.self,
         WrapStoredPropertiesMacro.self,
         AddAsyncMacro.self,
+        AddCompletionHandlerMacro.self,
         PeerValueWithSuffixNameMacro.self
     ]
 }

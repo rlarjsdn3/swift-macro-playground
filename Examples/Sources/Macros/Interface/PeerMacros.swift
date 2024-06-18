@@ -14,6 +14,15 @@ public macro AddAsync() = #externalMacro(
 )
 
 
+// MARK: - Add Completion Handler Peer
+
+@attached(peer, names: overloaded)
+public macro AddCompletionHandler() = #externalMacro(
+    module: "MacrosImplementation",
+    type: "AddCompletionHandlerMacro"
+)
+
+
 
 // MARK: - Peer Value With Suffix Name Peer
 
