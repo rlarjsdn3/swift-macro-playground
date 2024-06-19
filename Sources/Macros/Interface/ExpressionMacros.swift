@@ -71,3 +71,12 @@ public macro myWarning(_ message: String) = #externalMacro(
     module: "MacrosImplementation",
     type: "WarningMacro"
 )
+
+
+// MARK: - Todo Macro
+
+@freestanding(expression)
+public macro todo(_ message: String) = #externalMacro(
+    module: "MacrosImplementation",
+    type: "TodoMacro"
+)

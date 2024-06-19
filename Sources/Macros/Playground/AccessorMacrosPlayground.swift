@@ -34,16 +34,14 @@ extension DependencyValues {
 }
 
 func runEnvironmentValueAccessorMacroPlayground() {
+    
     var environmentValues = EnvironmentValues()
     print("Default myEnvironmentValue: \(environmentValues.myCustomValue)")
     environmentValues.myCustomValue = "New Value"
     print("New myEnvironmentValue: \(environmentValues.myCustomValue)")
     
-//    @Dependency(\.myCustomValue) var myCustomValue: String
-    var dependencyValues = DependencyValues()
-    print("Default myDependcyValue: \(dependencyValues.myCustomValue)")
-    dependencyValues.myCustomValue = "New Value"
-    print("New myDependencyValue: \(dependencyValues.myCustomValue)")
+    @Dependency(\.myCustomValue) var myCustomValue: String
+    print("Default myDependcyValue: \(myCustomValue)")
 }
 
 

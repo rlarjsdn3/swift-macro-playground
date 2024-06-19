@@ -9,9 +9,9 @@ import SwiftSyntax
 import SwiftSyntaxBuilder
 import SwiftSyntaxMacros
 
-public struct RawValueMacro { }
+public struct RawRepresentableMacro { }
 
-extension RawValueMacro: MemberMacro {
+extension RawRepresentableMacro: MemberMacro {
     
     public static func expansion(
         of node: AttributeSyntax,
@@ -130,7 +130,7 @@ extension RawValueMacro: MemberMacro {
     
 }
 
-extension RawValueMacro: ExtensionMacro {
+extension RawRepresentableMacro: ExtensionMacro {
     
     public static func expansion(
         of node: AttributeSyntax,

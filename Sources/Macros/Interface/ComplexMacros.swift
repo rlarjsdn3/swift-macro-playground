@@ -5,6 +5,10 @@
 //  Created by 김건우 on 5/23/24.
 //
 
+import Foundation
+
+import ReactorKit
+
 // MARK: - Codable Complex
 
 @attached(member, names: named(CodingKeys))
@@ -43,10 +47,24 @@ public macro DictionaryStorageProperty() = #externalMacro(
 
 @attached(member, names: named(init), named(rawValue))
 @attached(extension, conformances: RawRepresentable)
-public macro RawValue<T>(_ type: T.Type) = #externalMacro(
+public macro RawRepresentable<T>(_ type: T.Type) = #externalMacro(
     module: "MacrosImplementation",
-    type: "RawValueMacro"
+    type: "RawRepresentableMacro"
 )
 
 
 
+// MARK: - Reactor Complex
+
+@attached(member, names: arbitrary)
+@attached(extension, conformances: Reactor, Identifiable, Equatable, names: arbitrary)
+public macro Reactor(_ type: ReactorExpansionType? = nil) = #externalMacro(
+    module: "MacrosImplementation",
+    type: "ReactorMacro"
+)
+
+
+public enum ReactorExpansionType {
+    case equatable
+    case noAction
+}

@@ -41,4 +41,9 @@ func runExpressionMacrosPlayground() {
     
     #myWarning("remember to pass a string literal here")
     
+    
+    // MARK: - Todo Expression
+    
+    #todo("리팩토링된 UserDefaults로 Data 불러오기")
+    
 }

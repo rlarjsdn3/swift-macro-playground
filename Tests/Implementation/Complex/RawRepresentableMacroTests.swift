@@ -11,16 +11,16 @@ import MacrosImplementation
 import XCTest
 
 fileprivate let testMacros: [String: Macro.Type] = [
-    "RawValue": RawValueMacro.self
+    "RawRepresentable": RawRepresentableMacro.self
 ]
 
-final class RawValueMacroTests: XCTestCase {
+final class RawRepresentableMacroTests: XCTestCase {
     
     func testRawValueMacro() throws {
         
         assertMacroExpansion(
             """
-            @RawValue(Int.self)
+            @RawRepresentable(Int.self)
             public struct Test {
 
             }

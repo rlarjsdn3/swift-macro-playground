@@ -14,7 +14,6 @@ protocol API {
     func getItems() -> [String]
     func removeItem(id: String)
 }
-
 struct MyAPI: API { }
 
 // MARK: - Eqautable Extension

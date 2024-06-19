@@ -8,6 +8,8 @@
 import Foundation
 import MacrosInterface
 
+import ReactorKit
+
 // MARK: - Dictionary Storage
 
 @DictionaryStorage
@@ -21,7 +23,7 @@ struct Point {
 // MARK: - Codable
 
 @Codable
-public struct Member {
+struct Member {
     var name: String
     @CodableKey(name: "day_of_birth") var dayOfBirth: String
     var age: Int
@@ -30,13 +32,23 @@ public struct Member {
 
 // MARK: - RawValue
 
-@RawValue(Int.self)
+@RawRepresentable(Int.self)
 struct Key { }
 
+
+// MARK: - Reactor
+
+@Reactor(.noAction)
+class SomeReactor {
+    struct State { }
+    
+    init() { self.initialState = State() }
+}
 
 
 
 func runDictionaryStorageMacroPlayground() {
+    
     var point = Point()
     print("Point storage begins as an empty dictionary: \(point)")
     print("Default value for point.x: \(point.x)")
@@ -56,6 +68,7 @@ func runDictionaryStorageMacroPlayground() {
     
     let key = Key(rawValue: 10 )
     print("Key-rawValue: \(String(describing: key?.rawValue))")
+    
 }
 
 
