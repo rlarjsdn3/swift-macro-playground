@@ -33,6 +33,7 @@ struct MyPlugin: CompilerPlugin {
         CaseDetectionMacro.self,
         EnumSubsetMacro.self,
         MetaEnumMacro.self,
+        DiscardableResultMacro.self,
         VariableDeprecatedMacro.self,
         WrapStoredPropertiesMacro.self,
         AddAsyncMacro.self,

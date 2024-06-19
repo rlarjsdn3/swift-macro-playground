@@ -9,6 +9,13 @@ import Foundation
 import SwiftUI
 import MacrosInterface
 
+// MARK: - DiscardableResult
+
+@DiscardableResult
+protocol MessageService {
+    func sendMessage(to: String) -> String
+}
+
 func runMemberAttributeMacrosPlayground() {
     
     // MARK: - Member Deprecated

@@ -5,6 +5,16 @@
 //  Created by 김건우 on 5/23/24.
 //
 
+// MARK: - DiscardableResult
+
+@attached(memberAttribute)
+public macro DiscardableResult() = #externalMacro(
+    module: "MacrosImplementation",
+    type: "DiscardableResultMacro"
+)
+
+
+
 // MARK: - Member Deprecated
 
 @attached(memberAttribute)
