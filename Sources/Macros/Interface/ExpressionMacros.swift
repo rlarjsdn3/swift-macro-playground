@@ -7,6 +7,8 @@
 
 import Foundation
 
+import DIContainer
+
 // MARK: - Stringify Expression
 
 @freestanding(expression)
@@ -79,4 +81,16 @@ public macro myWarning(_ message: String) = #externalMacro(
 public macro todo(_ message: String) = #externalMacro(
     module: "MacrosImplementation",
     type: "TodoMacro"
+)
+
+
+// MARK: - Register MAcro
+
+@freestanding(expression)
+public macro register<T>(
+    _ type: T.Type,
+    key: String? = nil,
+    resolve: @escaping (Resolvable) -> T) = #externalMacro(
+    module: "MacrosImplementation",
+    type: "RegisterMacro"
 )

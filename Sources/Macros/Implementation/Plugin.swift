@@ -21,6 +21,7 @@ struct MyPlugin: CompilerPlugin {
         RawRepresentableMacro.self,
         ReactorMacro.self,
         FuncUniqueMacro.self,
+        RegisterMacro.self,
         NativeFileIDMacro.self,
         NativeFilePathMacro.self,
         NativeLineMacro.self,

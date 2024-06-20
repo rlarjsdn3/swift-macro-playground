@@ -23,7 +23,8 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/apple/swift-syntax.git", from: "509.0.0"),
         .package(url: "https://github.com/pointfreeco/swift-dependencies.git", from: "1.3.0"),
-        .package(url: "https://github.com/ReactorKit/ReactorKit.git", from: "3.2.0")
+        .package(url: "https://github.com/ReactorKit/ReactorKit.git", from: "3.2.0"),
+        .package(url: "https://github.com/Tavernari/DIContainer.git", from: "0.3.0")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -46,7 +47,8 @@ let package = Package(
             dependencies: [
                 "MacrosImplementation",
                 .product(name: "ReactorKit", package: "ReactorKit"),
-                .product(name: "Dependencies", package: "swift-dependencies")
+                .product(name: "Dependencies", package: "swift-dependencies"),
+                .product(name: "DIContainer", package: "DIContainer")
             ],
             path: "Sources/Macros/Interface"
         ),

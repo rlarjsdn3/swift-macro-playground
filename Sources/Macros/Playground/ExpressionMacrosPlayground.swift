@@ -8,6 +8,8 @@
 import Foundation
 import MacrosInterface
 
+import DIContainer
+
 func runExpressionMacrosPlayground() {
     
     // MARK: - Source Location Expression
@@ -45,5 +47,16 @@ func runExpressionMacrosPlayground() {
     // MARK: - Todo Expression
     
     #todo("리팩토링된 UserDefaults로 Data 불러오기")
+    
+    
+    // MARK: - Register Expression
+    
+    class ViewModel {
+        func sayHello() { print("Hello, Macro!") }
+    }
+    
+    #register(ViewModel.self, key: "Key") { _ in
+        ViewModel()
+    }
     
 }

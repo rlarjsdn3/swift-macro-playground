@@ -1,5 +1,5 @@
 {
-  "originHash" : "6417b003c0b5a35b47fc1ae32e46bf076e77e078950eaf4eb4068fcc4046ec0b",
+  "originHash" : "3a2cddd43ef23c9377b9f80b63a07093327f41ef7132d6b1bf44a79c173b3200",
   "pins" : [
     {
       "identity" : "combine-schedulers",
@@ -8,6 +8,15 @@
       "state" : {
         "revision" : "9dc9cbe4bc45c65164fa653a563d8d8db61b09bb",
         "version" : "1.0.0"
+      }
+    },
+    {
+      "identity" : "dicontainer",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Tavernari/DIContainer.git",
+      "state" : {
+        "revision" : "b62996dfd3718eff8c349652c7feb59c22134b3a",
+        "version" : "0.3.0"
       }
     },
     {
