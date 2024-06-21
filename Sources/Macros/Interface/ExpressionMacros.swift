@@ -84,7 +84,7 @@ public macro todo(_ message: String) = #externalMacro(
 )
 
 
-// MARK: - Register MAcro
+// MARK: - Register Macro
 
 @freestanding(expression)
 public macro register<T>(
@@ -93,4 +93,13 @@ public macro register<T>(
     resolve: @escaping (Resolvable) -> T) = #externalMacro(
     module: "MacrosImplementation",
     type: "RegisterMacro"
+)
+
+
+// MARK: - Resolve Macro
+
+@freestanding(expression)
+public macro resolve<T>(_ type: T.Type, key: String? = nil) -> T = #externalMacro(
+    module: "MacrosImplementation",
+    type: "ResolveMacro"
 )

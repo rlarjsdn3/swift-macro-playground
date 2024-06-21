@@ -59,4 +59,9 @@ func runExpressionMacrosPlayground() {
         ViewModel()
     }
     
+    
+    // MARK: - Resolve Expression
+    let viewModel = try? #resolve(ViewModel.self)
+    viewModel?.sayHello()
+    
 }
