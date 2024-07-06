@@ -32,3 +32,12 @@ public macro wrapStoredProperties(_ attributeName: String) = #externalMacro(
     module: "MacrosImplementation",
     type: "WrapStoredPropertiesMacro"
 )
+
+
+// MARK: - Pulsing
+
+@attached(memberAttribute)
+public macro Pulsing() = #externalMacro(
+    module: "MacrosImplementation",
+    type: "PulsingMacro"
+)

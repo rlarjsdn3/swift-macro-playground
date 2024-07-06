@@ -38,10 +38,12 @@ struct MyPlugin: CompilerPlugin {
         EnumSubsetMacro.self,
         MetaEnumMacro.self,
         DiscardableResultMacro.self,
+        PulsingMacro.self,
         VariableDeprecatedMacro.self,
         WrapStoredPropertiesMacro.self,
         AddAsyncMacro.self,
         AddCompletionHandlerMacro.self,
+        NoPulseMacro.self,
         PeerValueWithSuffixNameMacro.self
     ]
 }

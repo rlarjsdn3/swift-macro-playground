@@ -31,3 +31,13 @@ public macro PeerValueWithSuffixName() = #externalMacro(
     module: "MacrosImplementation",
     type: "PeerValueWithSuffixNameMacro"
 )
+
+
+
+// MARK: - NoPulse Peer
+
+@attached(peer)
+public macro NoPulse() = #externalMacro(
+    module: "MacrosImplementation",
+    type: "NoPulseMacro"
+)
